@@ -1,0 +1,43 @@
+@use "../abstracts/mixins" as *;
+
+body {
+  font-size: 0.75rem;
+  font-family: var(--barlow-semi-condensed);
+  background: var(--light-grayish-blue);
+  padding: 3rem 0;
+  @include grid-center;
+}
+main {
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: 300px;
+}
+@include breakpoints(medium) {
+  main {
+    width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: dense;
+  }
+  section:nth-child(1) {
+    isolation: isolate;
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  section:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  section:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  section:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  section:nth-child(5) {
+    grid-column: 4/5;
+    grid-row: 1/3;
+  }
+}

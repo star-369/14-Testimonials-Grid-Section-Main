@@ -1,0 +1,79 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins" as *;
+
+.card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  line-height: 1.4;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  &__profile-container {
+    display: flex;
+    gap: 1.5rem;
+    &--light {
+      p:nth-child(1) {
+        font-weight: 600;
+      }
+      p:nth-child(2) {
+        opacity: 50%;
+      }
+    }
+    &--dark {
+      p:nth-child(1) {
+        font-weight: 600;
+      }
+      p:nth-child(2) {
+        opacity: 50%;
+      }
+    }
+    img {
+      height: 2rem;
+      border-radius: 50%;
+    }
+  }
+  h1 {
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  h2 {
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+  p {
+    font-weight: 500;
+    opacity: 70%;
+  }
+  &--moderate-purple {
+    background: var(--moderate-violet);
+    color: var(--white);
+  }
+  &--very-dark-grayish-blue {
+    background: var(--very-dark-grayish-blue);
+    color: var(--white);
+  }
+  &--white {
+    background: var(--white);
+    color: var(--very-dark-grayish-blue);
+  }
+  &--very-dark-blackish-blue {
+    background: var(--very-dark-blackish-blue);
+    color: var(--white);
+  }
+  &--isolation {
+    isolation: isolate;
+    position: relative;
+    .svg-quotation {
+      height: 98px;
+      width: 100px;
+      position: absolute;
+      top: 0;
+      right: 1.5rem;
+      @include breakpoints(medium) {
+        right: 4rem;
+      }
+      z-index: -1;
+      background: url("images/bg-pattern-quotation.svg");
+    }
+  }
+}
